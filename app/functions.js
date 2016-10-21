@@ -2,19 +2,21 @@ exports = typeof window === 'undefined' ? global : window;
 
 exports.functionsAnswers = {
   argsAsArray: function(fn, arr) {
-
+	return fn.apply(this, arr);
+	///return fn(...args)
   },
 
   speak: function(fn, obj) {
-
+	return fn.call(obj);
   },
 
   functionFunction: function(str) {
-
+	function a(str2){return str + ", " + str2;}
+	return a;
   },
 
   makeClosures: function(arr, fn) {
-
+	
   },
 
   partial: function(fn, str1, str2) {
